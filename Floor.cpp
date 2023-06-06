@@ -1,3 +1,4 @@
+#include "Floor.h"
 Floor::Floor(float x, float y): m_shape(sf::Vector2f(100.f, 20.f)), m_speed(400.f)
 {
     m_shape.setFillColor(sf::Color::Blue);
