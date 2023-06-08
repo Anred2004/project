@@ -8,4 +8,4 @@ Logger::Logger()
 void Logger::logError(const std::string& message)
 {
     m_file << "[ERROR] " << message << std::endl;
-}
+} 
