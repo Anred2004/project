@@ -10,8 +10,8 @@ public:
     Game();
     ~Game();
     void update();
-    void draw(sf::RenderTarget& target);
+    void draw(sf::RenderWindow& window);
  
 private:
-    std::vector<GameObject*> m_objects;
+    std::vector<GameObject*> m_objects;//вектор указателей на объекты класса GameObject.
 };
