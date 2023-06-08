@@ -9,6 +9,6 @@ class GameObject
 public:
    
     virtual void update(const std::vector<GameObject*>& objects) = 0;
-    virtual void draw(sf::RenderTarget& target) const = 0;
+    virtual void draw(sf::RenderWindow& window) const = 0;//позволяет рисовать графику на отдельной области экрана или текстуры.
     virtual GameObject::~GameObject() {}
 };
