@@ -1,17 +1,14 @@
+// Logger.h
 #pragma once
-
 #include <iostream>
 #include <fstream>
 #include <string>
-
 class Logger
 {
 public:
-    static Logger& getInstance();
-
-    void logError(const std::string& message);
-
-private:
     Logger();
+    void logError(const std::string& message);
+   
+private:
     std::ofstream m_file;
 };
