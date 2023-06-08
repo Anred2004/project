@@ -1,7 +1,7 @@
 // Floor.cpp
 #include "Floor.h"
 
-Floor::Floor(float x, float y): m_shape(sf::Vector2f(100.f, 20.f)), m_speed(200.f)
+Floor::Floor(float x, float y): m_shape(sf::Vector2f(100.f, 30.f)), m_speed(200.f)
 {
     m_shape.setFillColor(sf::Color::Blue);
     m_shape.setPosition(x, y);
@@ -39,9 +39,9 @@ void Floor::update(const std::vector<GameObject*>& objects)
         m_shape.setPosition(800.f - m_shape.getSize().x, m_shape.getPosition().y);
     }
 }
-void Floor::draw(sf::RenderTarget& target) const
+void Floor::draw(sf::RenderWindow& window) const
 {
-    target.draw(m_shape);
+    window.draw(m_shape);
 }
 sf::RectangleShape& Floor::getShape()
 {
