@@ -1,17 +1,18 @@
 // Floor.cpp
 #include "Floor.h"
 
-Floor::Floor(float x, float y): m_shape(sf::Vector2f(100.f, 30.f)), m_speed(200.f)
+Floor::Floor(float x, float y) : m_shape(sf::Vector2f(100.f, 30.f)), m_speed(200.f)
 {
-    m_shape.setFillColor(sf::Color::Blue);
+    floors.loadFromFile("sun.png");
+    m_shape.setTexture(&floors);
     m_shape.setPosition(x, y);
 }
 void Floor::update(const std::vector<GameObject*>& objects)
 {
     // Обновление позиции ракетки
     float dt = 1.f / 500.f;
-    
-    if (m_player == 1) 
+
+    if (m_player == 1)
     {
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
             m_shape.move(-m_speed * dt, 0.f);
@@ -21,7 +22,7 @@ void Floor::update(const std::vector<GameObject*>& objects)
         }
     }
 
-    if (m_player == 2) 
+    if (m_player == 2)
     {
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
             m_shape.move(-m_speed * dt, 0.f);
@@ -31,7 +32,7 @@ void Floor::update(const std::vector<GameObject*>& objects)
         }
     }
     // Проверка выхода ракетки за границы окна
-    if (m_shape.getPosition().x < 0.f) 
+    if (m_shape.getPosition().x < 0.f)
     {
         m_shape.setPosition(0.f, m_shape.getPosition().y);
     }
